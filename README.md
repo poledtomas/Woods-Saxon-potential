@@ -1,6 +1,6 @@
 This program is solving the Schrödinger equation numerically using the finite difference method. The finite difference method is an approach to solve differential equations numerically. The crux of the scheme lies in approximating the differential operator by simple differences. In principal, the code is calculating eigenvalues of matrix. 
 
-                                    $\frac{	\hbar}{2m}\frac{\partial^2}{\partial x^2}$\psi(x)+V(x)\psi(x)=E\psi(x)$
+                                    $\frac{	\hbar}{2m}\frac{\partial^2}{\partial x^2}\psi(x)+V(x)\psi(x)=E\psi(x)$
                                   
 
 ## Woods Saxon potential
