@@ -172,8 +172,8 @@ for i in range(len(l1)):
     if j1[i]==1/2 and l1[i]==1:
         densities_proton = [np.absolute(eigenvectors_proton[i, :])**2 for i in range(len(eigenvalues_proton))]
         densities_neutron= [np.absolute(eigenvectors_neutron[i, :])**2 for i in range(len(eigenvalues_neutron))]
-        energies_proton = ['E_%s'%i+' = {: >5.3f} MeV'.format(eigenvalues_proton[i].real) for i in range(30)]
-        energies_neutron = ['E_%s ='%i+' {: >5.3f} MeV'.format(eigenvalues_neutron[i].real) for i in range(30)]
+        energies_proton = ['$E_%s$'%i+' = {: >5.3f} MeV'.format(eigenvalues_proton[i].real) for i in range(30)]
+        energies_neutron = ['$E_%s =$'%i+' {: >5.3f} MeV'.format(eigenvalues_neutron[i].real) for i in range(30)]
         j=j1[i]
         l=l1[i]
 
