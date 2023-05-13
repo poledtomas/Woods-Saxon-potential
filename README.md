@@ -3,5 +3,7 @@ This program is solving the Schrödinger equation with Wood-Saxon potencial nume
 $-\frac{\hbar^2}{2m}\nabla^2\psi(x,t) + V \psi(x,t) = i\hbar\frac{\partial}{\partial t}\psi(x,t) $
 
 But we solve only  the time-independent Schrödinger equation $t=t_0$
+
 $-\frac{\hbar^2}{2m}\nabla^2\psi(x) + V \psi(x) = E\psi(x),$
+
 where $\nabla^2=\frac{d^2}{d x^2}$.
