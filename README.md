@@ -4,6 +4,4 @@ $-\frac{\hbar^2}{2m}\nabla^2\psi(x,t) + V \psi(x,t) = i\hbar\frac{\partial}{\par
 
 But we solve only  the time-independent Schrödinger equation $t=t_0$
 
-$-\frac{\hbar^2}{2m}\nabla^2\psi(x) + V \psi(x) = E\psi(x),$ where $V(r)= V_{ws}(r)+V_C(r)+V_{LS}$
-
-where $\nabla^2=\frac{d^2}{d x^2}$.
+$-\frac{\hbar^2}{2m}\nabla^2\psi(x) + V \psi(x) = E\psi(x), where $V(r)= V_{ws}(r)+V_C(r)+V_{LS}$ .
