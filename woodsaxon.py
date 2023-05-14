@@ -3,6 +3,8 @@ from scipy import constants as const
 from matplotlib import pyplot as plt
 from numpy import linalg as LA
 
+
+# all necessary constants
 hbar = const.hbar
 hbarc=197.326968
 e = const.e
@@ -32,12 +34,13 @@ g=1
 m=1
 alpha=1
 
+#r scale
 r = np.zeros(Number)
 
 for i in np.arange(Number):
-    r[i] = rmin + i*dr #fm
+    r[i] = rmin + i*dr 
 
-
+#all potencials
 def woodsaxon(r,R,a,V0):
     ws = np.zeros(Number)
     for i in np.arange(len(r)):
@@ -76,6 +79,7 @@ def spinorbit(r,R,a,V0,r_0):
 def scalarLS(j,l,r,R,a,V0,r_0):
     return 0.5*(j*(j+1)-l*(l+1)-3/4)*hbar*hbar*spinorbit(r,R,a,V0,r_0)
 
+#hamiltonian for protons and neutrons
 def create_ham_proton(j,l,r,R,a,V0proton,r_0,Z,m_proton):    
     columbvmev_matice = np.diag(columb(r,Z,R) )
     woodsaxon_term_proton = np.diag((woodsaxon(r,R,a,V0proton))) 
@@ -93,6 +97,7 @@ def create_ham_neutron(j,l,r,R,a,V0neutron,r_0,m_neutron):
     hamiltonian_neutron = (-hbarc**2/(2.0 * m_neutron))*(laplace_term - angular_matice) + (woodsaxon_term_neutron+scalarLS_term_neutron)
     return hamiltonian_neutron
 
+#plotting potencials
 def plot_potencial(j,l,r,R,a,V0neutron,r_0,V0proton):
     fig,ax=plt.subplots(2,1,figsize=(8,10))
 
@@ -121,7 +126,7 @@ def plot_potencial(j,l,r,R,a,V0neutron,r_0,V0proton):
                     wspace=0.4,
                     hspace=0.4)
     return 0
-
+#plotting densities
 def plot_densities(r,densities_proton,densities_neutron,energies_proton,energies_neutron,l,j):
     fig,ax=plt.subplots(2,1,figsize=(8,10))
 
@@ -146,6 +151,7 @@ def plot_densities(r,densities_proton,densities_neutron,energies_proton,energies
     plt.show()
     return 0
 
+#solve eigenvalues for given j and l
 l1=[0,1,1,2,2]
 j1=[1/2,3/2,1/2,5/2,3/2]
 
@@ -162,6 +168,7 @@ for i in range(len(l1)):
     eigenvectors_proton= np.array([x for _, x in sorted(zip(eigenvalues_proton, eigenvectors_proton.T), key=lambda pair: pair[0])])
     eigenvalues_proton = np.sort(eigenvalues_proton)
 
+    #sort eigenvectors for neutrons and protons
     eigenvectors_neutron= np.array([x for _, x in sorted(zip(eigenvalues_neutron, eigenvectors_neutron.T), key=lambda pair: pair[0])])
     eigenvalues_neutron = np.sort(eigenvalues_neutron)
 
