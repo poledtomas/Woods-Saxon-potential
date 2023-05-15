@@ -2,7 +2,7 @@ import numpy as np
 from scipy import constants as const
 from numpy import linalg as LA
 from numpy.testing import assert_allclose
-from woodsaxon import create_ham_proton
+from woodsaxon.woodsaxon import create_ham_proton
 
 def test_woodsaxon():
     
